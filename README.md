@@ -1,11 +1,17 @@
-#Tabela de notas bimestrais
+# Tabela de notas bimestrais
 
-####Tecnologias utilizadas no projeto
+#### Tecnologias utilizadas no projeto
  
-  *HTML5
-  *CSS3
-  *Javascript
-  *Bootstrap 4
+  * HTML5
+  * CSS3
+  * Javascript
+  * Bootstrap 4
   
-![/home/daniel/Imagens/imagemTabela.png]
+A tabela é um projeto pessoal, com a finalidade de praticar as tecnologias que foram usadas nela. <br>
+Ela armazena os dados na localStorage do navegador.
 
+#### Tabela vazia
+![](/home/daniel/Imagens/imagemTabela.png)
+
+#### Com itens
+![](/home/daniel/Imagens/imagemTabelaItens.png)
