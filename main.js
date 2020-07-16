@@ -42,6 +42,14 @@ function main() {
         return arrNotas
     }
 
+    function limpaInputs(){
+        inptNomeAluno.value = "";
+        inptRemoveNome.value = "";
+        for(i = 0; i < inptNotas.length ; i++){
+            inptNotas[i].value = "";
+        }
+    }
+
     let arrNomes = [];
 
     function criaNomeAluno(nome) {
@@ -62,6 +70,12 @@ function main() {
             const celula = criaCelula();
             celula.setAttribute("class", `notas${i}bi notasb`);
 
+            let nan = isNaN(inptNotas[i].value);
+            if (nan === true) {
+                alert('Insira somente números.');
+                return true
+            }
+
             if (inptNotas[i].value !== "") {
                 celula.innerText = `${Number(inptNotas[i].value)} PT`;
             } else {
@@ -75,12 +89,12 @@ function main() {
     function previneNotaVazia() {
         for (i = 0; i < inptNotas.length; i++) {
             if (!inptNotas[i].value) {
-                const conf = confirm(`Nenhum valor de prova foi atribuído à nota do ${i+1}º bimestre e será atribuida a nota zero`)
+                const conf = confirm(`Nenhum valor de prova foi atribuído à nota do ${i+1}º bimestre e será atribuida a nota zero.`)
                 if (!conf) {
                     try {
                         return btnEnviar.preventDefault();
                     } catch (err) {
-                        throw (' Nenhum valor atribuído às notas')
+                        throw (' Nenhum valor atribuído às notas.')
                     }
                 }
             }
@@ -90,11 +104,11 @@ function main() {
     function previneNomeRepetido(nome) {
         for (i = 0; i < arrNomes.length; i++) {
             if (nome === arrNomes[i]) {
-                alert('Nome já usado')
+                alert('Nome já usado.')
                 try {
                     btnEnviar.preventDefault();
                 } catch (err) {
-                    throw (' Nome repetido')
+                    throw (' Nome repetido.')
                 }
             }
         }
@@ -102,12 +116,17 @@ function main() {
 
     function removeAluno(nome) {
         const aluno = document.getElementById(nome.toLowerCase());
+
+        if (!aluno) {
+            return alert('Nome inexistente.');
+        }
+
         aluno.parentElement.remove()
     }
 
     function nomeVazio(nome) {
         if (!nome) {
-            alert('Você não digitou um nome')
+            alert('Você não digitou um nome.')
             return btnEnviar.preventDefault();
         }
     }
@@ -163,28 +182,44 @@ function main() {
 
     function criarTabelaDeAlunos() {
         const nome = recebeNome();
-        nomeVazio(nome)
-        previneNomeRepetido(nome)
-        recebeNotas()
+        nomeVazio(nome);
+        previneNomeRepetido(nome);
+        recebeNotas();
         criaNomeAluno(nome);
         criaNotas(nome)
         salvarNome();
-        salvarNotas()
+        salvarNotas();
     }
 
-    function removeAlunosMaster(){
+    function removeAlunosMaster() {
         removeAluno(inptRemoveNome.value);
         salvarNome();
         salvarNotas();
     }
 
+    function eNan() {
+        for (i = 0; i < inptNotas.length; i++) {
+            if (isNaN(inptNotas[i].value) === true) {
+                return true
+            }
+        }
+    }
+
     btnEnviar.addEventListener("click", function (e) {
+        eNan();
+
+        if (eNan === true) {
+            return e.preventDefault();
+        }
+
         criarTabelaDeAlunos();
         previneNotaVazia(e);
+        limpaInputs();
     })
 
     btnRemoveAluno.addEventListener("click", function () {
-       removeAlunosMaster();
+        removeAlunosMaster();
+        limpaInputs();
     })
 
     inptNotas[3].addEventListener("keypress", function (e) {
@@ -193,14 +228,22 @@ function main() {
                 if (!inptNotas[i].value) return previneNotaVazia();
             }
 
+            eNan();
+
+            if (eNan === true) {
+                return e.preventDefault();
+            }
+
             criarTabelaDeAlunos();
+            limpaInputs();
         }
     })
 
-    inptRemoveNome.addEventListener("keypress", function(e){
-        if (e.keyCode === 13){
-            if(!inptRemoveNome) return;
+    inptRemoveNome.addEventListener("keypress", function (e) {
+        if (e.keyCode === 13) {
+            if (!inptRemoveNome) return;
             removeAlunosMaster();
+            limpaInputs();
         }
     })
 
