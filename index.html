@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabela de provas | By: Daniel Barros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="d-flex flex-row justify-content-center principal mt-5">
+            <div class="col-10 text-center mt-4 base ">
+                <h5 class="mt-1">Notas dos alunos</h5>
+                    <div class="input-group">
+                        <input class="form-control mr-1 nomeAluno" type="text" name="nomeAluno" placeholder="Digite o nome do aluno">
+                        <input class="form-control mr-1 notas" type="text" name="nota1" placeholder="Nota 1º bimestre">
+                        <input class="form-control mr-1 notas" type="text" name="nota2" placeholder="Nota 2º bimestre">
+                        <input class="form-control mr-1 notas" type="text" name="nota3" placeholder="Nota 3º bimestre">
+                        <input class="form-control mr-1 notas" type="text" name="nota4" placeholder="Nota 4º bimestre">
+                        <div class=" input-group-prepend">
+                            <button class="btn btn-primary btnEnviar">Enviar</button>
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <table class="tabela mt-3">
+                            <tr>
+                                <th>Alunos</th>
+                                <th>1º Bimestre</th>
+                                <th>2º Bimestre</th>
+                                <th>3º Bimestre</th>
+                                <th>4º Bimestre</th>
+                            </tr>
+
+                        </table>
+                        <div class="col-6 offset-3 input-group justify-content-center mt-5 mb-5">
+                            <input class="form-control nomeAlunoRemove" type="text" name="nomeAluno" placeholder="Digite o nome do aluno">
+                            <button class="btn btn-danger btnRemoveAluno">Remover Aluno</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

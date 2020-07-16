@@ -1,0 +1,53 @@
+body {
+    background: #0077C0;
+}
+
+
+.base {
+    background-color:  #F39C12;
+    box-shadow: 20px 20px 30px #000;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.btnEnviar,
+.btnRemoveAluno{
+    border-radius: 10px !important;
+}
+
+.nomeAluno,
+.nomeAlunoRemove
+{
+    border-radius: 10px !important;
+}
+
+.notas{
+    border-radius: 10px !important;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+tr,
+td,
+th {
+    border: 1px solid #F39C12;
+}
+
+th{
+    background-color: #A84410;
+}
+
+td{
+    background-color: #FFCF4B;
+}
+
+.cabecalho {
+    height: 50px;
+}
+
+.cont{
+    overflow: auto;
+}
