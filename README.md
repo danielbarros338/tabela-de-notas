@@ -8,10 +8,15 @@
   * Bootstrap 4
   
 A tabela é um projeto pessoal, com a finalidade de praticar as tecnologias que foram usadas nela. <br>
-Ela armazena os dados na localStorage do navegador.
+  
+  * Ela armazena os dados na localStorage do navegador.
+  * Não aceita valores além de números nas notas (até 5 caracteres, tipos int e float com ponto (**Será adicionado a opção de escrever com vírgula posteriormente**).
+  * Nomes repetidos geram erro.
+  * Deletar nomes não existentes geram erro.
+  * Responsivo (**Em desenvolvimento**)
 
 #### Tabela vazia
-![](/home/daniel/Imagens/imagemTabela.png)
+![](https://i.imgur.com/bzwlgMB.png)
 
 #### Com itens
-![](/home/daniel/Imagens/imagemTabelaItens.png)
+![](https://i.imgur.com/FHjT8ec.png)
