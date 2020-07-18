@@ -70,12 +70,6 @@ function main() {
             const celula = criaCelula();
             celula.setAttribute("class", `notas${i}bi notasb`);
 
-            let nan = isNaN(inptNotas[i].value);
-            if (nan === true) {
-                alert('Insira somente números.');
-                return true
-            }
-
             if (inptNotas[i].value !== "") {
                 celula.innerText = `${Number(inptNotas[i].value)} PT`;
             } else {
