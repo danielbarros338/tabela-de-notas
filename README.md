@@ -10,11 +10,11 @@
 A tabela é um projeto pessoal, com a finalidade de praticar as tecnologias que foram usadas nela. <br>
   
   * Ela armazena os dados na localStorage do navegador.
-  * Não aceita valores além de números nas notas (até 5 caracteres, tipos int e float com ponto (**Será adicionado a opção de escrever com vírgula posteriormente**).
+  * Não aceita valores além de números nas notas.
   * Nomes repetidos geram erro.
   * Deletar nomes não existentes geram erro.
-  * Responsivo (**Em desenvolvimento**)
-
+  * Quando a tabela for usada em um dispositivo móvel, deve ser usada com o dispositivo na posição horizontal para uma melhor experiência;
+  
 #### Tabela vazia
 ![](https://i.imgur.com/bzwlgMB.png)
 
